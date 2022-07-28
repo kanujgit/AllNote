@@ -7,10 +7,7 @@ import com.kdroid.allnote.framework.RoomNoteDataSource
 import com.kdroid.allnote.framework.UseCases
 import com.kdroid.core.data.Note
 import com.kdroid.core.repository.NoteRepository
-import com.kdroid.core.usecase.AddNote
-import com.kdroid.core.usecase.GetAllNote
-import com.kdroid.core.usecase.GetNote
-import com.kdroid.core.usecase.RemoveNote
+import com.kdroid.core.usecase.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +22,8 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         AddNote(repository),
         GetAllNote(repository),
         GetNote(repository),
-        RemoveNote(repository)
+        RemoveNote(repository),
+        WordCount()
     )
 
     val saved = MutableLiveData<Boolean>()

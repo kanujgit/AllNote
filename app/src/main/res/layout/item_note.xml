@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:id="@+id/noteLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/noteLayout"
     android:layout_width="match_parent"
     android:layout_height="@dimen/layout_height"
+    android:orientation="vertical"
     app:cardCornerRadius="5dp"
     app:cardElevation="2dp"
-    app:cardUseCompatPadding="true"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,28 +19,39 @@
             style="@style/Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title"
-            android:maxLines="1"
             android:ellipsize="end"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:maxLines="1"
+            android:text="Title"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/content"
             style="@style/Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Content"
-            android:maxLines="1"
             android:ellipsize="end"
-            app:layout_constraintTop_toBottomOf="@id/title"/>
+            android:maxLines="1"
+            android:text="Content"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
         <TextView
             android:id="@+id/date"
             style="@style/Detail"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Last updated"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/word_count"
+            style="@style/Detail"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

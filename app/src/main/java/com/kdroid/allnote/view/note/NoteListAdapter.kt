@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class NoteListAdapter(var notes: ArrayList<Note>,val action: ListAction) :
+class NoteListAdapter(var notes: ArrayList<Note>, val action: ListAction) :
     RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
 
     inner class NoteViewHolder(private val binding: ItemNoteBinding) :
@@ -22,7 +22,8 @@ class NoteListAdapter(var notes: ArrayList<Note>,val action: ListAction) :
             val sdf = SimpleDateFormat("MM dd, HH:mm:ss")
             val res = Date(note.updatedTime)
             binding.date.text = "Last updated: ${sdf.format(res)}"
-            binding.noteLayout.setOnClickListener{action.onClick(id = note.id)}
+            binding.noteLayout.setOnClickListener { action.onClick(id = note.id) }
+            binding.wordCount.text = "Total word count : ${note.wordCount}  "
         }
     }
 
